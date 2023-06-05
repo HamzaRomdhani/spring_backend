@@ -27,4 +27,8 @@ public class Transaction {
     private String destinationIban;
     private LocalDate transactionDate;
     private transactionType type;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

@@ -36,8 +36,9 @@ public class Contact {
 
     private String iban;
 
- /*   @ManyToOne
-    private User user;*/
+    @ManyToOne
+    @JoinColumn(name ="user_id")
+    private User user;
 
 
 }

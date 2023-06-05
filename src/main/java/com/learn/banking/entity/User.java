@@ -1,6 +1,9 @@
 package com.learn.banking.entity;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -23,5 +26,20 @@ public class User {
     private boolean active;
     @OneToOne
     private Account account;
+
+    @OneToMany(mappedBy = "user")
+    private List<Contact> contacts;
+
+    @OneToMany(mappedBy = "user")
+    private List<Transaction> transactions;
+
+
+    @ManyToMany
+    @JoinTable(
+            name ="roles_users",
+            joinColumns = @JoinColumn(name="user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles;
 
 }
