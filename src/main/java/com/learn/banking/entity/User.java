@@ -22,6 +22,7 @@ public class User {
     @Column(name ="Last_name")
     private String lastName;
 
+    @Column(unique = true)
     private String email;
     private boolean active;
     @OneToOne

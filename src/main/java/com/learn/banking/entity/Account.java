@@ -14,7 +14,7 @@ public class Account {
     @GeneratedValue
     private Integer id;
 
-    @Column(name ="iban")
+    @Column(unique = true)
     private String iban;
 
 

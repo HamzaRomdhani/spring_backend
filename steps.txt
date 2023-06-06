@@ -1,0 +1,7 @@
+create your entity and understand the logic of your application
+make the hole relationships for your entity (Onetoone - Onetomany - Manytoone - Manytomany)
+validate your columns with the annotation @Column for database validaion
+create the repository for every entity without @Repository because we extends from JpaRepository
+create your services for your bissnessLogic and inject your repository with annotaion @RequiredArgsConstructor and your variable should be final
+create your DTO_request for hnot exposing your entity for the hole world
+create mapper for every DTO with the help of builder design pattern for mapping DTO to entity and the opposite
