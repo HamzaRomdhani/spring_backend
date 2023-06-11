@@ -5,3 +5,10 @@ create the repository for every entity without @Repository because we extends fr
 create your services for your bissnessLogic and inject your repository with annotaion @RequiredArgsConstructor and your variable should be final
 create your DTO_request for hnot exposing your entity for the hole world
 create mapper for every DTO with the help of builder design pattern for mapping DTO to entity and the opposite
+add dependecy for validation from database (spring-boot-starter-validation)
+add annotation for every field with message for every field
+create class validation to utlisation of object validation with call of factory
+after validaion in the bissness logic we throw exception custom class exception extends from runtime exception
+create class for handling those exception
+
+
