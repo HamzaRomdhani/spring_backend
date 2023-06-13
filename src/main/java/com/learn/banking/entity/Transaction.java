@@ -26,6 +26,7 @@ public class Transaction {
 
     private String destinationIban;
     private LocalDate transactionDate;
+    @Enumerated(EnumType.STRING)
     private transactionType type;
 
     @ManyToOne
