@@ -1,3 +1,5 @@
+server:
+  port: 6060
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/bank_db
@@ -15,6 +17,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   main:
     banner-mode: "off"
+
 
 logging:
   level:

@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name="_user")
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name ="First_name")
@@ -24,7 +24,11 @@ public class User {
 
     @Column(unique = true)
     private String email;
+
     private boolean active;
+
+
+
     @OneToOne
     private Account account;
 

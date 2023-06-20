@@ -1,6 +1,7 @@
 package com.learn.banking.mappers;
 
 import com.learn.banking.DTOs.AccountRequest;
+import com.learn.banking.DTOs.AccountResponse;
 import com.learn.banking.entity.Account;
 import com.learn.banking.entity.User;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,15 @@ public class AccountMapper {
                 .build();
     }
 
+    public AccountResponse toResponse(Account account){
+        return  AccountResponse.builder()
+                .id(account.getId())
+                .firstName(account.getUser().getFirstName())
+                .lastName(account.getUser().getLastName())
+                .iban(account.getIban())
+                        .build();
+
+    }
 
 
 }

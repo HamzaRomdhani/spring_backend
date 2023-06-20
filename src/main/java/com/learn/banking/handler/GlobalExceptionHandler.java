@@ -1,6 +1,7 @@
 package com.learn.banking.handler;
 
 import com.learn.banking.Exceptions.ObjectValidationEception;
+import jakarta.persistence.EntityNotFoundException;
 import org.hibernate.ObjectDeletedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,5 +21,15 @@ public class GlobalExceptionHandler {
             .ValidationsErrors(exp.getVoilations())
             .build();
 
+    }
+
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponsException handler(EntityNotFoundException exp){
+        return ResponsException
+                .builder()
+                .errormsg(exp.getMessage())
+                .build();
     }
 }
